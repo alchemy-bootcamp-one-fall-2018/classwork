@@ -1,4 +1,4 @@
-import contacts from './contacts.js';
+import contacts from './data/contacts.js';
 
 const contactApi = {
     getAll() {
