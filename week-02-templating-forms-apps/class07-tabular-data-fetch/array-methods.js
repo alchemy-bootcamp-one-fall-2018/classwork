@@ -19,3 +19,19 @@ const filteredNumbers = numbers.filter(function(number) {
 });
 
 console.log('array method way', filteredNumbers);
+
+const sortedNumbers = numbers.slice().sort(function(a, b) {
+    // if(a === b) {
+    //     return 0;
+    // }
+    // else if(a > b) {
+    //     return 1;
+    // }
+    // else {
+    //     return -1;
+    // }
+
+    return a - b;
+});
+
+console.log('sorted', sortedNumbers);
