@@ -30,6 +30,7 @@ Emoji | Type
 - JavaScript
   - General
 - Tools
+  - Chrome
   - Misc
   - VS Code
 
@@ -107,7 +108,10 @@ Emoji | Type
   - 🔨 [AST Explorer](https://astexplorer.net/)
   - 🔨 [Repl.it (JS Sandbox)](https://repl.it/repls/GigaJauntyFormula)
 
-# Tools
+# 🔨 Tools 🔨
+
+  ## Chrome
+  - 🔨 [One Tab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en)
 
   ## Misc.
   - 👾 [Emoji Dictionary](https://emojipedia.org)
