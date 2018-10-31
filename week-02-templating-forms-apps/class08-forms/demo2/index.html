@@ -18,22 +18,22 @@
         <h1>Mafia Application</h1>
         <form id="mafia-application">
             <label for="name">Mob Name</label>
-            <input type="text" id="name">
+            <input type="text" name="name" id="name" required>
 
             <fieldset>
                 <legend>
                     Have you killed anyone?
                 </legend>
 
-                <input type="radio" id="yes" name="murder">
+                <input required type="radio" id="yes" value="yes" name="murder">
                 <label for="yes">Yes</label>
 
-                <input type="radio" id="no" name="murder">
+                <input required type="radio" id="no" value="no" name="murder">
                 <label for="no">No</label>
 
                 <div>
                     <label for="how-many">If yes, how many?</label>
-                    <input type="number" id="how-many">
+                    <input type="number" min="1" name="kills" id="how-many">
                 </div>
             </fieldset>
 
@@ -43,22 +43,22 @@
                 </legend>
 
                 <div>
-                    <input type="checkbox" id="gun">
+                    <input name="weapons" value="gun" type="checkbox" id="gun">
                     <label for="gun">Gun</label>
                 </div>
 
                 <div>
-                    <input type="checkbox" id="wire">
+                    <input name="weapons" value="wire" type="checkbox" id="wire">
                     <label for="wire">Wire</label>
                 </div>
 
                 <div>
-                    <input type="checkbox" id="icepick">
+                    <input name="weapons" value="icepick" type="checkbox" id="icepick">
                     <label for="icepick">Ice Pick</label>
                 </div>
 
                 <div>
-                    <input type="checkbox" id="pliers">
+                    <input name="weapons" value="pliers" type="checkbox" id="pliers">
                     <label for="pliers">Pliers</label>
                 </div>
             </fieldset>
@@ -68,7 +68,8 @@
                     What role are you applying for?
                 </legend>
                     <label for="role">Select Role</label>
-                    <select id="role">
+                    <select id="role" name="role" required>
+                        <option value="" hidden disabled selected>Select a role</option>
                         <option value="driver">Getaway Driver</option>
                         <option value="enforcer">Enforcer</option>
                         <option value="sevp-drug">Senior Executive Vice President of Drug Procurement</option>
@@ -77,7 +78,12 @@
             </fieldset>
 
             <label for="spaghetti">How awesome is spaghetti?</label>
-            <input type="range"  id="spaghetti" min="1" max="10">
+            <input type="range" name="spaghetti" id="spaghetti" min="1" max="10">
+            <span id="spaghetti-display">5</span>
+
+            <div>
+                <button>Pledge</button>
+            </div>
 
         </form>
     </main>
