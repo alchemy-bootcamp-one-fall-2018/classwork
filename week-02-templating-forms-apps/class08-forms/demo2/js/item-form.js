@@ -2,7 +2,10 @@
 const form = document.getElementById('mafia-application');
 const spaghettiRange = document.getElementById('spaghetti');
 const spaghettiDisplay = document.getElementById('spaghetti-display');
+const yesKilled = document.getElementById('yes');
+const noKilled = document.getElementById('no');
 const howMany = document.getElementById('how-many');
+const message = document.getElementById('message');
 
 const itemForm = {
     init(onAdd) {
@@ -12,6 +15,14 @@ const itemForm = {
         }
         setSpaghettiDisplay();
         spaghettiRange.addEventListener('change', setSpaghettiDisplay);
+
+        yesKilled.addEventListener('change', function() {
+            howMany.required = true;
+        });
+
+        noKilled.addEventListener('change', function() {
+            howMany.required = false;
+        });
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -25,17 +36,11 @@ const itemForm = {
             // gather data, ie:
             mafiosx.name = elements.name.value;
 
-            howMany.style.background = '';
             mafiosx.murder = elements.murder.value === 'yes';
             if(mafiosx.murder) {
                 const count = parseInt(elements.kills.value);
                 if(!isNaN(count)) {
                     mafiosx.kills = count;
-                }
-                else {
-                    // set an error message
-                    howMany.style.background = 'red';
-                    return;
                 }
             }
 
@@ -52,11 +57,20 @@ const itemForm = {
 
             mafiosx.awesome = parseInt(elements.spaghetti.value);
 
+            if(mafiosx.awesome < 9) {
+                message.textContent = 'Whattayou? Some kinda phoney?';
+                return;
+            }
+            else {
+                message.textContent = '';
+            }
+
             // call the callback with new item
             onAdd(mafiosx);
 
             // use an onscreen message
-            alert('thanks for your interest');
+            message.textContent = 'Thanks for your interest! We look forward to killing with you!';
+            
             form.reset();
 
         });
