@@ -4,51 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contacts</title>
+    <title>Fruit Cart</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/add-fruit.css">
+    <link rel="stylesheet" href="css/fruit-list.css">
+    <link rel="stylesheet" href="css/fruit-detail.css">
 </head>
 <body>
     <header>
         <img class="logo" src="assets/logo.png">
-        <h1>Contacts</h1>
+        <h1>Fruit Cart</h1>
     </header>
     
     <main>    
-        <section id="filter" class="secondary">
-            <h2>Search</h2>
-            <label>
-                Name:
-                <input required id="filter-name">
-            </label>
-            <label>
-                Tags:
-                <input required id="filter-tags">
-            </label>
+        <section id="add-fruit">
+            <h2>Add a Fruit</h2>
+            <form id="add-form">
+                <label>
+                    Name:
+                    <input required name="name">
+                </label>
+                <label>
+                    Description:
+                    <input required name="description">
+                </label>
+                <label>
+                    Color:
+                    <input required name="color">
+                </label>
+                <label>
+                    Image:
+                    <input name="image">
+                </label>
+                <label>
+                    <button class="action">Add</button>
+                </label>
+            </form>
         </section>
 
+
         <section>
-            <h2>Contacts</h2>
-            <table>
-                <thead id="contacts-header">
-                    <tr>
-                        <td class="sort asc">First</td>
-                        <td>Last</td>
-                        <td>Active</td>
-                        <td>Email</td>
-                        <td>Phone</td>
-                        <td>Tags</td>
-                    </tr>
-                </thead>
-                <tbody id="contacts-body">
-                   
-                </tbody>
-            </table>
+            <h2>Fruits</h2>
+            <ul id="fruits"></ul>
+        </section>
+
+        <section class="hidden" id="fruit-detail">
+            <h2>Name of Fruit</h2>
+            <p>description</p>
+            <button class="danger">Remove this Fruit</button>
         </section>
 
     </main>
 
-    <script type="module" src="js/components/app.js"></script>
-    <script type="module" src="array-methods.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

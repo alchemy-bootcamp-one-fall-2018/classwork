@@ -26,11 +26,6 @@ Alchemy Brand Colors:
     border: 1px solid white;
 }
 
-.secondary {
-    background: #00AA8F;
-    color: white;
-}
-
 .caution {
     background: #EFEB3E;
     color: black;
@@ -38,7 +33,9 @@ Alchemy Brand Colors:
 }
 
 .danger {
-    color: #EB4D5C;
+    background: #EB4D5C;
+    color: white;
+    border: 1px solid white;
 }
 
 header {
@@ -60,4 +57,8 @@ header, section {
 
 h1 {
     margin: 0;
+}
+
+.hidden {
+    display: none;
 }
