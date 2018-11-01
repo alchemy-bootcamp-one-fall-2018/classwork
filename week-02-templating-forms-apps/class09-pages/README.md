@@ -1,13 +1,17 @@
 # Class 09: Apps, Links, Pages
 
-## topics
+## Agenda
 
+* Misc
 * Progress Review
 * Code Review
 * Component App Toolbox Review
 * Anchor Links
 * Multi-Page Apps
 
+## Misc
+
+Going to coder events
 
 ## Progress Review
 
