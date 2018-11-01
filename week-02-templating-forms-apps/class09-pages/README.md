@@ -17,6 +17,8 @@
 
 ## Code Review
 
+* Running `eslint` from command line
+
 ## Component/App Toolbox Review
 
 In this weeks labs:
