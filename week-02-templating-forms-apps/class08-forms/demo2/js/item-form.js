@@ -59,6 +59,7 @@ const itemForm = {
 
             if(mafiosx.awesome < 9) {
                 message.textContent = 'Whattayou? Some kinda phoney?';
+                // by returning, we avoid calling "onAdd" data save below;
                 return;
             }
             else {
