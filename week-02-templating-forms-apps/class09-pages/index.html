@@ -12,11 +12,23 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="assets/logo.png">
-        <h1>Fruit Cart</h1>
+        <div>
+            <img class="logo" src="assets/logo.png">
+            <h1>Fruit Cart</h1>
+        </div>
+        <nav>
+            <a href="./">Home</a>
+            <a href="order.html">Order</a>
+        </nav>
     </header>
     
-    <main>    
+    <main>
+        <section>
+            <a href="#add-fruit">Add a Fruit</a>
+            <a href="#fruit-list">Fruit List</a>
+            <a href="#fruit-detail">Fruit Detail</a>
+        </section>    
+
         <section id="add-fruit">
             <h2>Add a Fruit</h2>
             <form id="add-form">
@@ -43,7 +55,7 @@
         </section>
 
 
-        <section>
+        <section id="fruit-list">
             <h2>Fruits</h2>
             <ul id="fruits"></ul>
         </section>
