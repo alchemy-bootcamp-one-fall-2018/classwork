@@ -1,7 +1,6 @@
 
 let cart = [];
 
-
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -14,18 +13,23 @@ const cartApi = {
         }        
         return cart;
     },
-    add(fruit) {
-        const orderItem = cart.find(item => {
+    order(fruit, quantity) {
+        const index = cart.findIndex(item => {
             return item.name === fruit.name;
         });
 
+        const orderItem = cart[index];
+
         if(orderItem) {
-            orderItem.quantity++;
+            orderItem.quantity += quantity;
+            if(orderItem.quantity <= 0) {
+                cart.splice(index, 1);
+            }
         }
-        else {
+        else if(quantity > 0) {
             cart.push({
                 name: fruit.name,
-                quantity: 1
+                quantity: quantity
             });
         }
 

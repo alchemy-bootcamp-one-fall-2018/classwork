@@ -9,7 +9,7 @@
 .fruit {
     display: inline-flex;
     width: 100px;
-    height: 150px;
+    height: 160px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -17,6 +17,16 @@
     border: 1px solid black;
     font-size: .7em;
     cursor: pointer;
+}
+
+.fruit.order {
+    height: 200px;
+    justify-content: space-between;
+    cursor: default;
+}
+
+.price {
+    font-weight: bold;
 }
 
 .fruit:hover {
@@ -33,6 +43,7 @@
 .fruit img {
     max-width: 100%;
     max-height: 70px;
+    margin-top: 10px;
 }
 
 .fruit button {

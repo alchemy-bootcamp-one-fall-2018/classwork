@@ -1,17 +1,19 @@
 
 let fruits = [
-    {
-        name: 'Apple',
-        color: 'red',
-        image: 'apple.png',
-        description: 'red and shiny'
-    },
-    {
-        name: 'Banana',
-        color: 'yellow',
-        image: 'banana.png',
-        description: 'yellow and slippery'
-    }
+    // {
+    //     name: 'Apple',
+    //     color: 'red',
+    //     image: 'apple.png',
+    //     price: 5.00,
+    //     description: 'red and shiny'
+    // },
+    // {
+    //     name: 'Banana',
+    //     color: 'yellow',
+    //     image: 'banana.png',
+    //     price: 2.00,
+    //     description: 'yellow and slippery'
+    // }
 ];
 
 function saveFruits() {

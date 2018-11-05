@@ -6,9 +6,9 @@ import shoppingCart from './shopping-cart.js';
 const fruits = fruitsApi.getAll();
 const cart = cartApi.get();
 
-shoppingCart.init(cart);
+shoppingCart.init(cart, fruits);
 
-fruitList.init(fruits, function(fruit) {
-    cartApi.add(fruit);
+fruitList.init(fruits, null, function(fruit, quantity) {
+    cartApi.order(fruit, quantity);
     shoppingCart.update(cart);
 });

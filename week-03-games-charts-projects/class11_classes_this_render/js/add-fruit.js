@@ -20,6 +20,7 @@ const addFruit = {
             // get the values from the form controls
             const fruit = {
                 name: elements.name.value,
+                price: parseFloat(elements.price.value),
                 description: elements.description.value,
                 color: elements.color.value,
                 image: elements.image.value
