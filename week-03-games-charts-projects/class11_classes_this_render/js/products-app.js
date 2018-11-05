@@ -5,17 +5,16 @@ import fruitDetail from './fruit-detail.js';
 
 const fruits = fruitApi.getAll();
 
-fruitList.init(fruits, /*onSelect*/ function(fruit) {
+fruitList.init(fruits, fruit => {
     fruitDetail.update(fruit);
 });
 
-fruitDetail.init(/*onRemove*/ function(fruit) {
+fruitDetail.init(fruit => {
     const index = fruitApi.remove(fruit);
-    // TODO: tell fruit list to re-render
     fruitList.remove(index);
 });
 
-addFruit.init(function(fruit) {
+addFruit.init(fruit => {
     // this is the onAdd listener
 
     // tell the api service first

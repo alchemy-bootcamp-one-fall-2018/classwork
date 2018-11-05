@@ -26,9 +26,7 @@ const shoppingCart = {
         for(let i = 0; i < cart.length; i++) { 
             const item = cart[i];
             
-            const fruit = fruits.find(function(fruit) {
-                return fruit.name === item.name;
-            });
+            const fruit = fruits.find(fruit => fruit.name === item.name);
 
             total += item.quantity * fruit.price;
 

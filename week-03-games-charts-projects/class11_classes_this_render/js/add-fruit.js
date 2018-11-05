@@ -10,7 +10,7 @@ const addFruit = {
         // form.onsubmit = function() {};
 
         // "standard" way to add event listeners in JavaScript
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', event => {
             // prevent form from reloading page
             event.preventDefault();
 

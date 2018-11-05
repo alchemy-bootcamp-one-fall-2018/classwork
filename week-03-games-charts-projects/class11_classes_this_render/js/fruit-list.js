@@ -1,7 +1,7 @@
-
+import html from './html';
 
 function makeFruit(fruit) {
-    const html = /*html*/`
+    return html`
         <li class="fruit">
             <h3 class="name" style="background: ${fruit.color};">
                 ${fruit.name}
@@ -15,16 +15,6 @@ function makeFruit(fruit) {
             </div>
         </li>
     `;
-
-    // A. Create template element to convert string to DOM
-    const template = document.createElement('template');
-
-    // B. Assign innerHTML property
-    template.innerHTML = html;
-
-    // C. Return the `content` property which is the dom
-    // (In a DocumentFragment)
-    return template.content;
 }
 
 const list = document.getElementById('fruits');
@@ -52,7 +42,7 @@ const fruitList = {
         const listItem = dom.querySelector('li');
 
         if(fruitList.onSelect) {
-            listItem.addEventListener('click', function() {
+            listItem.addEventListener('click', () => {
                 fruitList.onSelect(fruit);
             });
         }
@@ -66,15 +56,15 @@ const fruitList = {
             const incrementFive = dom.querySelector('button.increment-five');
             const decrement = dom.querySelector('button.decrement');
             
-            increment.addEventListener('click', function() {
+            increment.addEventListener('click', () => {
                 fruitList.onOrder(fruit, 1);
             });
             
-            incrementFive.addEventListener('click', function() {
+            incrementFive.addEventListener('click', () => {
                 fruitList.onOrder(fruit, 5);
             });
             
-            decrement.addEventListener('click', function() {
+            decrement.addEventListener('click', () => {
                 fruitList.onOrder(fruit, -1);
             });
         }

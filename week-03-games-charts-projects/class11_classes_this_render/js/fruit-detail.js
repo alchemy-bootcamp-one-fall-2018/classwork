@@ -4,7 +4,7 @@ const section = document.getElementById('fruit-detail');
 const fruitDetail = {
     init(onRemove) {
         const removeButton = section.querySelector('button');
-        removeButton.addEventListener('click', function() {
+        removeButton.addEventListener('click', () => {
             onRemove(fruitDetail.fruit);
             fruitDetail.fruit = null;
             section.classList.add('hidden');

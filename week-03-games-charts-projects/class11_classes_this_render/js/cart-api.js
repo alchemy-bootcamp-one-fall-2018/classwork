@@ -14,9 +14,7 @@ const cartApi = {
         return cart;
     },
     order(fruit, quantity) {
-        const index = cart.findIndex(item => {
-            return item.name === fruit.name;
-        });
+        const index = cart.findIndex(item => item.name === fruit.name);
 
         const orderItem = cart[index];
 
