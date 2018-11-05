@@ -13,13 +13,14 @@ function makeItem(item, fruit) {
 
 const list = document.getElementById('cart-list');
 
-const shoppingCart = {
-    init(cart, fruits) {
-        shoppingCart.fruits = fruits;
-        shoppingCart.populate(cart);
-    },
+class ShoppingCart {
+    constructor(cart, fruits) {
+        this.fruits = fruits;
+        this.populate(cart);
+    }
+
     populate(cart) {
-        const fruits = shoppingCart.fruits;
+        const fruits = this.fruits;
 
         let total = 0;
 
@@ -37,13 +38,14 @@ const shoppingCart = {
         const orderTotal = document.createElement('li');
         orderTotal.textContent = `Order Total $${total.toFixed(2)}`;
         list.appendChild(orderTotal);
-    },
+    }
+
     update(cart) {
         while(list.lastElementChild) {
             list.lastElementChild.remove();
         }
-        shoppingCart.populate(cart);
+        this.populate(cart);
     }
 };
 
-export default shoppingCart;
+export default ShoppingCart;

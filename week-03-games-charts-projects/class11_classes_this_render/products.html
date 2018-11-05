@@ -11,61 +11,7 @@
     <link rel="stylesheet" href="css/fruit-detail.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img class="logo" src="assets/logo.png">
-            <h1>Fruit Cart</h1>
-        </div>
-        <nav>
-            <a href="./">Home</a>
-            <a href="products.html">Products</a>
-            <a href="order.html">Order</a>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="add-fruit">
-            <h2>Add a Fruit</h2>
-            <form id="add-form">
-                <label>
-                    Name:
-                    <input required name="name">
-                </label>
-                <label>
-                    Price:
-                    <input required name="price" type="number" step="any">
-                </label>
-                <label>
-                    Description:
-                    <input required name="description">
-                </label>
-                <label>
-                    Color:
-                    <input required name="color">
-                </label>
-                <label>
-                    Image:
-                    <input name="image">
-                </label>
-                <label>
-                    <button class="action">Add</button>
-                </label>
-            </form>
-        </section>
-
-
-        <section id="fruit-list">
-            <h2>Fruits</h2>
-            <ul id="fruits"></ul>
-        </section>
-
-        <section class="hidden" id="fruit-detail">
-            <h2>Name of Fruit</h2>
-            <p>description</p>
-            <button class="danger">Remove this Fruit</button>
-        </section>
-
-    </main>
+    <div id="root"></div>
 
     <script type="module" src="js/products-app.js"></script>
 </body>

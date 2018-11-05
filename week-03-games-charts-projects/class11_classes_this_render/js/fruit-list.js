@@ -1,5 +1,11 @@
 import html from './html.js';
 
+function makeTemplate() {
+    return html`
+        <ul class="fruits"></ul>
+    `;
+}
+
 function makeFruit(fruit) {
     return html`
         <li class="fruit">
@@ -17,23 +23,25 @@ function makeFruit(fruit) {
     `;
 }
 
-const list = document.getElementById('fruits');
 
-const fruitList = {
-    // init
-    // should include:
-    // 1. initial fruits array
-    // 2. onSelect callback (optional)
-    // 3. onOrder callback (optional)
-    init(fruits, onSelect, onOrder) {
-        fruitList.fruits = fruits;
-        fruitList.onSelect = onSelect;
-        fruitList.onOrder = onOrder;
+class FruitList {
+    constructor(fruits, onSelect, onOrder) {
+        this.fruits = fruits;
+        this.onSelect = onSelect;
+        this.onOrder = onOrder;
+    }
 
-        for(let i = 0; i < fruits.length; i++) {
-            fruitList.add(fruits[i]);
+    render() {
+        const dom = makeTemplate();
+        this.list = dom.querySelector('ul');
+
+        for(let i = 0; i < this.fruits.length; i++) {
+            this.add(this.fruits[i]);
         }
-    },
+
+        return dom;
+    }
+
     add(fruit) {
         const dom = makeFruit(fruit);
 
@@ -41,13 +49,14 @@ const fruitList = {
 
         const listItem = dom.querySelector('li');
 
-        if(fruitList.onSelect) {
+        if(this.onSelect) {
+            // using "this" here only work because arrow function
             listItem.addEventListener('click', () => {
-                fruitList.onSelect(fruit);
+                this.onSelect(fruit);
             });
         }
 
-        if(fruitList.onOrder) {
+        if(this.onOrder) {
             listItem.classList.add('order');
             const buttonsContainer = dom.querySelector('.order-buttons');
             buttonsContainer.classList.remove('hidden');
@@ -57,24 +66,25 @@ const fruitList = {
             const decrement = dom.querySelector('button.decrement');
             
             increment.addEventListener('click', () => {
-                fruitList.onOrder(fruit, 1);
+                this.onOrder(fruit, 1);
             });
             
             incrementFive.addEventListener('click', () => {
-                fruitList.onOrder(fruit, 5);
+                this.onOrder(fruit, 5);
             });
             
             decrement.addEventListener('click', () => {
-                fruitList.onOrder(fruit, -1);
+                this.onOrder(fruit, -1);
             });
         }
 
         // append to <ul>, this will empty the fragment
-        list.appendChild(dom);
-    },
-    remove(index) {
-        list.querySelectorAll('li')[index].remove();
+        this.list.appendChild(dom);
     }
-};
 
-export default fruitList;
+    remove(index) {
+        this.list.querySelectorAll('li')[index].remove();
+    }
+}
+
+export default FruitList;

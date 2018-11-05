@@ -1,13 +1,45 @@
+import html from './html.js';
 
-const addFruit = {
-    // "init" method for initializing the component
-    // 1. passed data or callback functions
-    // 2. setup some event listeners
-    init(onAdd) {
-        const form = document.getElementById('add-form');
+function makeTemplate() {
+    return html`
+        <form name="add">
+            <label>
+                Name:
+                <input required name="name">
+            </label>
+            <label>
+                Price:
+                <input required name="price" type="number" step="any">
+            </label>
+            <label>
+                Description:
+                <input required name="description">
+            </label>
+            <label>
+                Color:
+                <input required name="color">
+            </label>
+            <label>
+                Image:
+                <input name="image">
+            </label>
+            <label>
+                <button class="action">Add</button>
+            </label>
+        </form>
+    `;
+}
 
-        // below is different way to write this
-        // form.onsubmit = function() {};
+class AddFruit {
+    // hold onto data and callbacks needed in render and other methods
+    constructor(onAdd) {
+        this.onAdd = onAdd;
+    }
+
+    render() {
+        const dom = makeTemplate();
+
+        const form = dom.querySelector('form');
 
         // "standard" way to add event listeners in JavaScript
         form.addEventListener('submit', event => {
@@ -26,13 +58,14 @@ const addFruit = {
                 image: elements.image.value
             };
 
-            onAdd(fruit);
+            this.onAdd(fruit);
 
             form.reset();
             document.activeElement.blur();
         });
 
+        return dom;
     }
-};
+}
 
-export default addFruit;
+export default AddFruit;

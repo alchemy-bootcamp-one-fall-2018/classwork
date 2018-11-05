@@ -35,7 +35,7 @@ Class 11: `class`, `this`, `render()`
 * Returns its `DOM`
 * Parent appends to correct location
 * Every component has a template (own `html`)
-    * Must use `cloneNode(true)` to create multiple copies!
+    <!-- * Must use `cloneNode(true)` to create multiple copies! -->
 
 ### Using a bootstrap file
 
