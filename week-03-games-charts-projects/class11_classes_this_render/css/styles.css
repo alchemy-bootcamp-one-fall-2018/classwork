@@ -1,0 +1,82 @@
+body {
+    font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    color: #000000;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* 
+Alchemy Brand Colors:
+
+#000000 black
+#FFFFFF white
+#39499B blue
+#00AA8F teal
+#EFEB3E yellow
+#EB4D5C red
+*/
+
+.action {
+    background: #39499B;
+    color: white;
+    border: 1px solid white;
+}
+
+.caution {
+    background: #EFEB3E;
+    color: black;
+    border: 1px solid black;
+}
+
+.danger {
+    background: #EB4D5C;
+    color: white;
+    border: 1px solid white;
+}
+
+header {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    height: 75px;
+    margin-right: 15px;
+} 
+
+header, section {
+    padding: 10px 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color:antiquewhite;
+}
+
+a:active {
+    color: red;
+}

@@ -1,0 +1,1 @@
+extended lab day for `fundraiser`
