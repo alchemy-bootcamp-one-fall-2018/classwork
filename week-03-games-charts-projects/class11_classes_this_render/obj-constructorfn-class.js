@@ -1,7 +1,5 @@
 
-// function makeThing(data) {
-//     // return some dom
-// }
+/* Revealing Module Pattern */
 
 // function makeComponentA() {
 
@@ -14,6 +12,8 @@
 
 // export default makeComponentA;
 
+/* Constructor Function Pattern */
+
 // function Pet(name) {
 //     this.name = name;
 // }
@@ -21,6 +21,8 @@
 // Pet.prototype.sayHello = function() {
 //     return 'I am ' + this.name;
 // };
+
+/* Class Component Pattern */
 
 class Pet {
     constructor(name) {
@@ -31,5 +33,7 @@ class Pet {
         return 'I am ' + this.name;
     }
 }
+
+export default Pet;
 
 
