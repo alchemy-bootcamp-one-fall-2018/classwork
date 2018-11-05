@@ -20,6 +20,7 @@ Class 11: `class`, `this`, `render()`
 * Journey from object literal to constructor function to classes
     * Prototypical inheritance explained
 * Introducing the `class` keyword
+* Naming: Use `TitleCase`
 * special `constructor` function
 * `class` body contains methods (no commas `,`)
 
@@ -35,3 +36,7 @@ Class 11: `class`, `this`, `render()`
 * Parent appends to correct location
 * Every component has a template (own `html`)
     * Must use `cloneNode(true)` to create multiple copies!
+
+### Using a bootstrap file
+
+* Creates `App` component and appends to `<div id="root"></div>`
