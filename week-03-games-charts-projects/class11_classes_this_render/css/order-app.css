@@ -1,0 +1,19 @@
+
+.cart-container {
+    margin-bottom: 10px;
+}
+
+.checkout {
+    position: relative;
+    top: -10px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.checkout:hover {
+    background: white;
+    color: #39499B;
+    border: 1px solid #39499B;
+}

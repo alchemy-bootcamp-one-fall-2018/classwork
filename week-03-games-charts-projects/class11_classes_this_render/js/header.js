@@ -9,6 +9,7 @@ function makeTemplate() {
         <nav>
             <a href="./">Home</a>
             <a href="products.html">Products</a>
+            <a href="report.html">Order Report</a>
             <a href="order.html">Order</a>
         </nav>
     `;

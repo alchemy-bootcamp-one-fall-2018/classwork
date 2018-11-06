@@ -26,6 +26,25 @@ Alchemy Brand Colors:
     border: 1px solid white;
 }
 
+.no-border {
+    border: unset;
+}
+
+.action-inverted {
+    background: white;
+    color: #39499B
+}
+
+.secondary {
+    background: #00AA8F;
+    color: white;
+}
+
+.secondary-inverted {
+    color: #00AA8F;
+    background: white;
+}
+
 .caution {
     background: #EFEB3E;
     color: black;
@@ -38,45 +57,10 @@ Alchemy Brand Colors:
     border: 1px solid white;
 }
 
-header {
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.logo {
-    height: 75px;
-    margin-right: 15px;
-} 
-
 header, section {
     padding: 10px 20px;
 }
 
-h1 {
-    margin: 0;
-}
-
 .hidden {
     display: none;
-}
-
-a {
-    color: white;
-}
-
-a:hover {
-    color:antiquewhite;
-}
-
-a:active {
-    color: red;
 }

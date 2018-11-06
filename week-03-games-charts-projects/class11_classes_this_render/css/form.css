@@ -9,10 +9,6 @@ Alchemy Brand Colors:
 #EB4D5C red
 */
 
-#add-fruit {
-    background: #00AA8F;
-    color: white;
-}
 
 h2 {
     margin-right: 10px;
@@ -21,12 +17,14 @@ h2 {
 
 form {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+
 }
 
 label {
     margin: 0 10px 10px 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 

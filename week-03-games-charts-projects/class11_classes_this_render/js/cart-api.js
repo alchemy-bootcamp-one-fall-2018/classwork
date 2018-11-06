@@ -27,10 +27,15 @@ const cartApi = {
         else if(quantity > 0) {
             cart.push({
                 name: fruit.name,
+                price: fruit.price,
                 quantity: quantity
             });
         }
 
+        saveCart();
+    },
+    clear() {
+        cart = [];
         saveCart();
     }
 };

@@ -12,7 +12,8 @@ function makeTemplate() {
         <header></header>
         
         <main>
-            <section id="add-fruit">
+
+            <section class="secondary" id="add-fruit">
                 <h2>Add a Fruit</h2>
             </section>
             

@@ -1,0 +1,43 @@
+
+table {
+    width: 100%;
+    min-width: 400px;
+    max-width: 700px;
+    border-collapse: collapse;
+}
+
+table.shopping-cart tbody {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+table.orders-report tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+table.orders-report tbody tr {
+    cursor: pointer;
+}
+
+table.orders-report tbody tr.selected {
+    background: #39499B;
+    color: white;
+}
+
+table thead td {
+    font-weight: bolder;
+    background: white;
+    color: black;
+}
+
+table td {
+    padding: 8px 8px;
+    text-align: right;
+}
+
+table td.name-cell {
+    text-align: left;
+}
+
+.total-cell {
+    font-weight: bolder;
+}

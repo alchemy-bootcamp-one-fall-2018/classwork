@@ -1,51 +1,66 @@
 import html from './html.js';
+import CartItem from './cart-item.js';
 
-function makeItem(item, fruit) {
+function makeTemplate() {
     return html`
-        <li>${item.name} 
-            ${item.quantity} * $${fruit.price.toFixed(2)} = 
-            <strong>
-                $${(item.quantity * fruit.price).toFixed(2)}
-            </strong>
-        </li>
+        <table class="shopping-cart">
+            <thead>
+                <tr class="secondary-inverted">
+                    <td class="name-cell">Item</td>
+                    <td class="quantity-cell">Quantity</td>
+                    <td class="price-cell">Price</td>
+                    <td class="total-cell">Total</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td class="name-cell"></td>
+                    <td class="quantity-cell"></td>
+                    <td class="price-cell">Order Total</td>
+                    <td class="total-cell"></td>
+                </tr>
+            </tfoot>
+        </table>
     `;
 }
 
-const list = document.getElementById('cart-list');
-
 class ShoppingCart {
-    constructor(cart, fruits) {
-        this.fruits = fruits;
-        this.populate(cart);
+    constructor(cart) {
+        this.cart = cart;
     }
 
-    populate(cart) {
-        const fruits = this.fruits;
+    render() {
+        const dom = makeTemplate();
+        this.body = dom.querySelector('tbody');
+        this.totalCell = dom.querySelector('tfoot .total-cell');
+        this.populate();
+        return dom;
+    }
 
+    populate() {
         let total = 0;
 
-        for(let i = 0; i < cart.length; i++) { 
-            const item = cart[i];
-            
-            const fruit = fruits.find(fruit => fruit.name === item.name);
+        for(let i = 0; i < this.cart.length; i++) { 
+            const item = this.cart[i];
+            total += item.quantity * item.price;
 
-            total += item.quantity * fruit.price;
-
-            const dom = makeItem(cart[i], fruit);
-            list.appendChild(dom);
+            const cartItem = new CartItem(item);
+            this.body.appendChild(cartItem.render());
         }
 
-        const orderTotal = document.createElement('li');
-        orderTotal.textContent = `Order Total $${total.toFixed(2)}`;
-        list.appendChild(orderTotal);
+        this.totalCell.textContent = `$${total.toFixed(2)}`;
     }
 
     update(cart) {
-        while(list.lastElementChild) {
-            list.lastElementChild.remove();
+        this.cart = cart;
+
+        while(this.body.lastElementChild) {
+            this.body.lastElementChild.remove();
         }
-        this.populate(cart);
+
+        this.populate();
     }
-};
+}
 
 export default ShoppingCart;
