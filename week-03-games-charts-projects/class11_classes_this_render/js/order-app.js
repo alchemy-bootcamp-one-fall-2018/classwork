@@ -36,15 +36,31 @@ class OrderApp {
         const headerSection = dom.querySelector('header');
         const cartContainer = dom.querySelector('.cart-container');
         const productSection = dom.querySelector('.product-list-section');
+        const checkoutLink = dom.querySelector('a.checkout');
 
         const header = new Header();
         headerSection.appendChild(header.render());
 
         const shoppingCart = new ShoppingCart(cart);
         cartContainer.appendChild(shoppingCart.render());
+
+        // sync class on checkout link
+        function showHideCheckoutLink() {
+            if(cart.length) {
+                checkoutLink.classList.remove('invisible');
+            }
+            else {
+                checkoutLink.classList.add('invisible');
+            }
+        }
+        showHideCheckoutLink();
         
-        const fruitList = new FruitList(fruits, null, (fruit, quantity) => {
+        const fruitList = new FruitList(fruits, cart, null, (fruit, quantity) => {
             cartApi.order(fruit, quantity);
+
+            // check cart and sync class on checkout link
+            showHideCheckoutLink();
+
             shoppingCart.update(cart);
         });
         productSection.appendChild(fruitList.render());

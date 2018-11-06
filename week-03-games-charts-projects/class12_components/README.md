@@ -19,6 +19,8 @@ Class 12: Components
 1. `render` method that returns dom from makeTemplate
 1. Associated `css` file
 
+Example `HelloWorld` component: 
+
 ```js
 import html from './html.js';
 
@@ -38,7 +40,31 @@ class HelloWorld {
 export default HelloWorld;
 ```
 
-This component could be used like:
+This component could be in a parent render method like:
+
+```js
+import HelloWorld from './hello-world';
+
+// ...
+
+// render method of parent component
+render() {
+    const dom = makeTemplate();
+
+    // target where the child component DOM will be append:
+    const helloWorldSection = dom.querySelector('hello-world-section');
+    // instantiate a new child component:
+    const helloWorld = new HelloWorld();
+    // call render() and append to target element
+    helloWorldSection.appendChild(helloWorld.render());
+
+    return dom;
+}
+
+// ...
+```
+
+Or the component could be directly added to document:
 
 ```js
 import HelloWorld from './hello-world';
@@ -57,7 +83,7 @@ and stored on `this`. You can calculate derived data in the constructor if it wi
 
 During the render method, reference any elements your component will need by using `dom.querySelector(<selector>)`
 
-* Use variables if only need during render (event listeners)
+* Use variables if only need during render (event listeners or appending child DOM content)
 * Store on `this` if you will need to access that element later
 
 ### Add additional methods
@@ -66,12 +92,17 @@ Depending on the makeup and jobs of your component, implement supplemental workf
 
 ## Exercise
 
-1. Draw Page Wire frame Diagram
-1. Decompose into components (right balance is jobs, not elements)
-1. Transfer to Tree Diagram
-1. For each component, identify 
-    1. What data it needs
-    1. What events it offers (callbacks)
+1. Draw out high-level pages
+1. Per Page:
+    1. Draw Page Wire frame Diagram
+        1. Decompose into components (right balance is jobs, not elements)
+        1. Transfer to Tree Diagram
+        1. For each component, identify 
+            1. What data it needs
+            1. What events it offers (callbacks)
+    1. Work out static html
+    1. Start coding
+    
 
 * Guess-or-Hang (Hangperson)
 * Tic-tac-toe vs Computer

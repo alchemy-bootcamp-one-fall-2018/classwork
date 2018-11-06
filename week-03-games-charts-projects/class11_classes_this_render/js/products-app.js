@@ -50,7 +50,7 @@ class ProductsApp {
         addFruitSection.appendChild(addFruit.render());
         
         // fruit list
-        const fruitList = new FruitList(fruits, fruit => {
+        const fruitList = new FruitList(fruits, null, fruit => {
             fruitDetail.update(fruit);
         });
         fruitListSection.appendChild(fruitList.render());

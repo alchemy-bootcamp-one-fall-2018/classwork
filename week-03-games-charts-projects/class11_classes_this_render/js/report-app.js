@@ -4,6 +4,8 @@ import Header from './header.js';
 import OrdersReport from './orders-report.js';
 import ShoppingCart from './shopping-cart.js';
 
+import HelloWorld from './hello-world.js';
+
 const orders = ordersApi.getAll();
 
 function makeTemplate() {
@@ -39,6 +41,9 @@ class ReportApp {
 
         const shoppingCart = new ShoppingCart([]);
         detailSection.appendChild(shoppingCart.render());
+
+        const helloWorld = new HelloWorld();
+        detailSection.appendChild(helloWorld.render());
     
         return dom;
     }
