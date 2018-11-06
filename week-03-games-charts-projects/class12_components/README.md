@@ -7,6 +7,8 @@ Class 12: Components
 * Review New Component Structure
 * Demo: Game
 
+## Code Review
+
 ## Components
 
 ### Minimum
