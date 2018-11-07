@@ -24,7 +24,7 @@ export default class App {
     }
 
     render() {
-        const dom = makeTemplate(this.user);
+        const dom = makeTemplate();
 
         // append child components:
 

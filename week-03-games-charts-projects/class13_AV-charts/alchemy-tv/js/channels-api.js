@@ -5,7 +5,8 @@ let channels = null;
 
 if(json) {
     channels = JSON.parse(json);
-} {
+} 
+else {
     channels = createChannels();
 }
 
@@ -25,8 +26,14 @@ function createChannels() {
     }];
 }
 
-export default {
-    getAll: function() {
+const channelsApi = {
+    getAll() {
         return channels;
+    },
+
+    save() {
+        window.localStorage.setItem('channels', JSON.stringify(channels));
     }
 };
+
+export default channelsApi;

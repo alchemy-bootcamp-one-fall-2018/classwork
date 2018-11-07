@@ -1,5 +1,5 @@
-import html from './html.js';
-import channelsApi from './channels-api.js';
+import html from '../html.js';
+import channelsApi from '../channels-api.js';
 import VideoViewer from './video-viewer.js';
 import ChannelSelector from './channel-selector.js';
 
@@ -30,15 +30,18 @@ export default class App {
     render() {
         let dom = makeTemplate();
 
+        // video viewer
         let viewerSection = dom.querySelector('.video-viewer');
 
         let firstChannel = this.channels[0];
         let viewer = new VideoViewer(firstChannel);
         viewerSection.appendChild(viewer.render());
 
+
         let channelSelector = new ChannelSelector(this.channels, channel => {
             channel.count++;
             this.totalCount++;
+            channelsApi.save();
             viewer.update(channel);
         });
 

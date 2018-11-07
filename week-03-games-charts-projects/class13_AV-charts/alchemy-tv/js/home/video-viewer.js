@@ -1,12 +1,12 @@
-import html from './html.js';
+import html from '../html.js';
 
-let template = function(name, video) {
+let template = function(channel) {
     return html`
         <div class="viewer">
-            <h2>${name}</h2>
+            <h2>${channel.name}</h2>
             <div class="tv">
                 <div class="screen">
-                    <video src="${video}" autoplay></video>
+                    <video src="${channel.video}" autoplay></video>
                 </div>
             </div>
         </div>
@@ -25,9 +25,12 @@ export default class VideoViewer {
     }
 
     render() {
-        let dom = template(this.channel.name, this.channel.video);
+        let dom = template(this.channel);
+        
+        // store these two elements for use in update
         this.header = dom.querySelector('h2');
         this.videoPlayer = dom.querySelector('video');
+
         return dom;
     }
 }
