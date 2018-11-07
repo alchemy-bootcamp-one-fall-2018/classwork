@@ -15,7 +15,7 @@ export default function html(strings, ...values) {
     var template = document.createElement('template');
 
     // B. Set it's html prop, which has effect of 
-    // browser turing html into DOM
+    // browser turning html into DOM
     template.innerHTML = htmlString;
 
     // C. Use the "content" property to get the DOM

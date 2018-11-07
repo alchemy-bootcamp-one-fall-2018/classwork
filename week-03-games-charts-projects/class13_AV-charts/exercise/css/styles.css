@@ -1,7 +1,7 @@
 body {
     font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
     color: #000000;
-    margin: 0;
+    /* margin: 0; */
 }
 
 * {
@@ -67,3 +67,26 @@ header, section {
 .invisible {
     visibility: hidden;
 }
+
+.app {
+    border: 2px solid red;
+}
+
+.child-a {
+    border: 2px solid green;
+}
+
+.child-b {
+    border: 2px dashed green;
+}
+
+.child-c {
+    border: 2px dashed red;
+}
+
+.child-c img {
+    width: 100px;
+}
+
+
+
