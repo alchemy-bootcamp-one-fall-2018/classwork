@@ -1,13 +1,9 @@
 import html from '../html.js';
+import Lights from './lights.js';
 
 function makeTemplate() {
     return html`
-        <ul class="lights">
-            <li class="red-light"></li>
-            <li class="green-light"></li>
-            <li class="yellow-light"></li>
-            <li class="blue-light"></li>
-        </ul>
+        <h3>Repeat the Sequence...</h3>
     `;
 }
 
@@ -16,31 +12,46 @@ export default class Recorder {
         this.sequence = sequence;
         this.onResult = onResult;
         this.pointer = 0;
+        this.timeOn = 1000;
+        this.timeToPlay = 2500;
+    }
+
+    stopTimeout() {
+        if(this.cancel) {
+            clearTimeout(this.cancel);
+        }
+    }
+
+    startTimeout() {
+        this.cancel = setTimeout(() => {
+            this.onResult('timeout');
+        }, this.timeToPlay);
     }
 
     render() {
         const dom = makeTemplate();
-        this.lights = dom.querySelectorAll('li');
-        for(let i = 0; i < this.lights.length; i++) {
-            const light = this.lights[i];
 
-            light.addEventListener('click', () => {
-                light.classList.add('active');
-                
+        const lights = new Lights(this.timeOn, index => {
+            this.stopTimeout();
+            const correct = this.sequence[this.pointer];
+            this.pointer++;
+            if(index !== correct) {
+                this.onResult('incorrect');
+            }
+            else if(this.pointer === this.sequence.length) {
+                // wait for light to turn off...
                 setTimeout(() => {
-                    light.classList.remove('active');
-                }, 500);
-                
-                const correct = this.sequence[this.pointer];
-                this.pointer++;
-                if(i !== correct) {
-                    this.onResult(false);
-                }
-                else if(this.pointer === this.sequence.length) {
-                    this.onResult(true);
-                }
-            });
-        }
+                    this.onResult('correct');
+                }, this.timeOn);
+            }
+            else {
+                this.startTimeout();
+            }
+        });
+
+        dom.appendChild(lights.render());
+
+        this.startTimeout();
 
         return dom;
     }

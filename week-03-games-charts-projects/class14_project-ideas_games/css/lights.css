@@ -1,20 +1,23 @@
 
 .lights {
-    margin: 20px auto;
     padding: 0;
     display: flex;
-    
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+    width: 350px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.1)
 }
 
 .lights li {
     list-style: none;
-    height: 150px;
-    width: 150px;
+    height: calc(50% - 15px);
+    width: calc(50% - 15px);
     border-radius: 100%;
     border: 1px solid black;
     opacity: 0.5;
-    margin: 0 10px 10px 0;
 }
 
 .lights li.active {
