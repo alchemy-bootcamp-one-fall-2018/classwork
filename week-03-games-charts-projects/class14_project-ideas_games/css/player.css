@@ -1,0 +1,38 @@
+
+.lights {
+    margin: 20px auto;
+    padding: 0;
+    display: flex;
+    
+    flex-wrap: wrap;
+}
+
+.lights li {
+    list-style: none;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    border: 1px solid black;
+    opacity: 0.5;
+    margin: 0 10px 10px 0;
+}
+
+.lights li.active {
+    opacity: 1.0;
+}
+
+.red-light {
+    background: #EB4D5C;
+}
+
+.green-light {
+    background: #00AA8F;
+}
+
+.blue-light {
+    background: #39499B;
+}
+
+.yellow-light {
+    background: #EFEB3E;
+}

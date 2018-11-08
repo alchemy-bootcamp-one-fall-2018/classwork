@@ -1,6 +1,7 @@
 import html from '../html.js';
 import userApi from '../user-api.js';
 import Header from '../header.js';
+import Player from './player.js';
 
 function makeTemplate() {
     return html`
@@ -23,7 +24,11 @@ export default class App {
         headerSection.appendChild(header.render());
 
         // game
-        // const main = dom.querySelector('main');
+        const main = dom.querySelector('main');
+        const player = new Player([0, 0, 1, 3], () => {
+            console.log('played');
+        });
+        main.appendChild(player.render());
 
         return dom;
     }
