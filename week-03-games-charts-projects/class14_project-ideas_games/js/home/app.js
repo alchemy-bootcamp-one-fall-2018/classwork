@@ -1,29 +1,42 @@
 import html from '../html.js';
 import userApi from '../user-api.js';
+import Header from './header.js';
+import SignIn from './sign-in.js';
 
 function makeTemplate() {
     return html`
-        <header>
-            <div>
-                <img class="logo" src="assets/logo.png">
-                <h1>Alchemy Games</h1>
-            </div>
-            <nav>
-            </nav>
-        </header>
+        <header></header>
 
         <main>
+            <section class="sign-in-section">
+                <h2>Choose your user name and difficulty</h2>
+            </section>
         </main>
     `;
 }
 
 export default class App {
     constructor() {
-        this.user = userApi.get();
+        // this.user = userApi.get();
     }
 
     render() {
-        let dom = makeTemplate();
+        const dom = makeTemplate();
+
+        // header
+        const headerSection = dom.querySelector('header');
+        const header = new Header();
+        headerSection.appendChild(header.render());
+
+        // sign-in
+        const signInSection = dom.querySelector('.sign-in-section');
+        const signIn = new SignIn(user => {
+            user.rounds = [];
+            userApi.signIn(user);
+            window.location = 'game.html';
+        });
+        signInSection.appendChild(signIn.render());
+
         return dom;
     }
 }

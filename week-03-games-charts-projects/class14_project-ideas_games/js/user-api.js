@@ -1,13 +1,10 @@
 
-const json = window.localStorage.getItem(user);
+const json = window.localStorage.getItem('user');
 
 let user = null;
 
 if(json) {
     user = JSON.parse(json);
-} 
-else {
-    user = null;
 }
 
 const userApi = {
