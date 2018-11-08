@@ -2,6 +2,7 @@ import html from '../html.js';
 import userApi from '../user-api.js';
 import Header from '../header.js';
 import Player from './player.js';
+import Recorder from './recorder.js';
 
 function makeTemplate() {
     return html`
@@ -25,10 +26,15 @@ export default class App {
 
         // game
         const main = dom.querySelector('main');
-        const player = new Player([0, 0, 1, 3], () => {
-            console.log('played');
+        // const player = new Player([0, 0, 1, 3], () => {
+        //     console.log('played');
+        // });
+        // main.appendChild(player.render());
+
+        const recorder = new Recorder([0, 0, 1, 3], wasCorrect => {
+            console.log('correct?', wasCorrect);
         });
-        main.appendChild(player.render());
+        main.appendChild(recorder.render());
 
         return dom;
     }
