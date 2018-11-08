@@ -26,6 +26,9 @@ Agenda:
     * Open book, internet, etc. etc.
     * Be empirical!
     * Due by Sunday at Midnight
+* Looking for more things to do?
+    * Make an app
+    * [Codewars](https://www.codewars.com)
 * Project week starts Monday 9:00am!
     * You own the main lab!
     * Will assign teams tables
