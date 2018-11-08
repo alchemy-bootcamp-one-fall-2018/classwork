@@ -1,6 +1,6 @@
 import html from '../html.js';
 import userApi from '../user-api.js';
-import Header from './header.js';
+import Header from '../header.js';
 import SignIn from './sign-in.js';
 
 function makeTemplate() {
@@ -9,7 +9,8 @@ function makeTemplate() {
 
         <main>
             <section class="sign-in-section">
-                <h2>Choose your user name and difficulty</h2>
+                <h2>Sign In</h2>
+                <p>Choose your user name and difficulty!</p>
             </section>
         </main>
     `;
