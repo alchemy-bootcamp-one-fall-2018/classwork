@@ -70,11 +70,10 @@ export default class App {
         const user = dom.querySelector('.user');
         user.textContent = this.user.name;
 
-        // game
         this.container = dom.querySelector('.lights-container');
-        this.roundSpan = dom.querySelector('.round');
-    
+        this.roundSpan = dom.querySelector('.round');    
         this.runRound();
+
         return dom;
     }
 }
