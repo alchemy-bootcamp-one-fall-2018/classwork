@@ -78,6 +78,8 @@ Here are some suggestions on how to organize your team during the launch phase:
 - The rest of the team will be Launch Navigators and responsible for the following.
 - Staying one-step ahead of the Launch Driver by researching unfamiliar technology.
 
+Result of Scaffolding is not only baseline files, but ability for all team members to contribute code (PR)
+
 ## Task Planning
 
 Now that your project is launched, here's how to organize the development efforts of your team. Your goal is to have the entire work plan for the project planned and organized, down to the finest details, before you begin any coding:
