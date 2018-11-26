@@ -106,7 +106,7 @@ Emoji | Type
 # JavaScript
   ## General
   - 🔨 [AST Explorer](https://astexplorer.net/)
-  - 🔨 [Repl.it (JS Sandbox)](https://repl.it/repls/GigaJauntyFormula)
+  - 🔨 [Repl.it (JS Sandbox)](https://repl.it/languages/nodejs)
 
 # 🔨 Tools 🔨
 
